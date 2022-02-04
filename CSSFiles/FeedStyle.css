@@ -1,0 +1,85 @@
+/*
+    THIS FILE IS THE STYLESHEET FOR THE FEED PAGE
+    (Feed.php)
+*/
+/* 
+    Created on : 04.02.2022, 09:45:31
+    Author     : Palo, Ilhan
+*/
+
+#Feed{
+    display: grid;
+    grid-template-columns: 500px auto 3fr;
+    align-items: center;
+    max-height: 500px;
+}
+
+.Picture{
+    height: 500px;
+    width: 500px;
+    grid-column: 1/2;
+}
+
+.IconDiv{
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.CommentIcon{
+    grid-row: 1 / 2;
+}
+
+.LikeIcon{
+    grid-row: 2 / 3;
+}
+
+.DownLoadIcon{
+    grid-row: 3 / 4;
+}
+
+.CommentSection{
+    grid-column: 3 / 4;
+    max-height: 500px;
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+}
+
+.CommentContainer{
+    grid-column: 1 / 2;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Comment{
+    align-self: auto;
+    justify-content: center;
+    background: orange;
+    font-size: 30px;
+    grid-column: 3/4;
+}
+
+.UserSection{
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.UserComment{
+    grid-column: 1 / 2;
+    margin: 10px;
+    margin-left: 0;
+}
+
+.SendCommentButton{
+    max-height: 50px;
+    max-width: 200px;
+    grid-column: 2 / 3;
+    align-self: center;
+}
+
+.EndOfPage{
+    align-self: center;
+    justify-content: center;
+}

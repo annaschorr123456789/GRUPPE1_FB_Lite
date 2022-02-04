@@ -1,0 +1,39 @@
+/*
+    THIS FILE IS THE STYLESHEET FOR THE NAVIGATION BAR ON TOP OF EVERY PAGE
+*/
+/* 
+    Created on : 04.02.2022, 09:45:31
+    Author     : Schorr, Anna
+*/
+
+#NavBar
+{
+    background: rgba(255,247,239,.82)
+}
+
+#NavBar a
+{
+    color:#034c73;
+    font-size:24px;
+    margin-left: 30px !important;
+    -webkit-transition: color 1s !important;
+    transition: color 1s !important;
+    -webkit-backface-visibility:hidden !important;
+    -moz-backface-visibility:hidden !important;
+    -ms-backface-visibility:hidden !important;
+    color:#BC8B40 !important
+}
+
+#NavBar a:hover
+{
+    color: #034c73 !important
+}
+    
+#NavBar a:hover{color:#B35340 ;-webkit-transition:color 0s linear;transition:color 0s linear;text-decoration:none}
+
+#NavBar img
+{
+    width:2%
+}
+
+

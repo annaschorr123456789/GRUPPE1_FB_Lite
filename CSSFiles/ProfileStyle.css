@@ -1,0 +1,194 @@
+/*
+    THIS FILE IS THE STYLESHEET FOR THE PROFILE SETTINGS PAGE
+    (Profile.html)
+*/
+/* 
+    Created on : 04.02.2022, 09:45:31
+    Author     : Schorr, Anna
+*/
+
+.PageHeaderBig
+{
+    font-weight:300;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:70px;
+    color:#034c73;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px
+}
+
+.PageHeaderSmall
+{
+
+    font-weight:300;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:50px;
+    color:#034c73;
+    text-align: center;
+    margin-bottom: 20px
+}
+ 
+#ProfileOverview
+{
+    font-weight:300;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    color:#034c73;
+}
+
+#Description
+{
+    max-width: 500px !important;
+}
+.ContentGrid
+{
+    -webkit-box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
+    box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
+    border-top:1px solid rgba(0,0,0,.1);
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    padding-right: 80px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image:none!important;
+    background:#4E4E4E
+}
+    
+.col
+{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.ContentGrid .innerCont
+{
+    -webkit-box-shadow:0 10px 0px 0 rgba(0,0,0,.1) inset;
+    box-shadow:0 1px 0px 0 rgba(0,0,0,.1) inset;
+    border-top:1px solid rgba(0,0,0,.1);
+    display:block;
+    margin-bottom:30px;
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width:100%;
+    background:rgba(236,234,227,.82);
+    padding:25px 30px
+}
+    
+.ContentGrid h4
+{
+    font-weight:700;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    margin:0 0 10px;
+    color:#B35340
+}
+    
+.ContentGrid h3
+{
+    font-size:20;
+    display:inline-block;
+    margin-bottom:0px;
+    width:100%;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    padding:25px 30px;
+
+    font-weight:700;
+    color:#034c73;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    margin:0 0 0
+}
+
+.Button
+{
+    font-family:'FF Meta Offc W01',sans-serif !important;
+    font-size:14px !important;
+    -webkit-transition: color 1s !important;
+    transition: color 1s !important;
+    border-color: #B35340 !important;
+    background-color: rgba(255,247,239,.82) !important;
+    color: #D15923 !important;
+    font-weight: 300 !important;
+}
+
+.Button:hover, .Button:active,  .Button:focus
+{
+    outline-color: rgba(255,250,239,.82)!important;
+    box-shadow: none !important;
+    background-color: #B35340 !important;
+    color: rgba(255,247,239,.82) !important
+}
+
+input, .ContentGrid a
+{
+    margin-left: 30px !important;
+}
+    
+.ContentGrid a
+{
+    -webkit-transition: color 1s !important;
+    transition: color 1s !important;
+    -webkit-backface-visibility:hidden !important;
+    -moz-backface-visibility:hidden !important;
+    -ms-backface-visibility:hidden !important;
+    color:#BC8B40 !important
+}
+
+.ContentGrid a:hover
+{
+    -webkit-transform:translate(3px,0) !important;
+    -ms-transform:translate(3px,0) !important;
+    transform:translate(3px,0) !important;
+    color: #034c73 !important
+}
+    
+.ContentGrid a:hover{color:#B35340 ;-webkit-transition:color 0s linear;transition:color 0s linear;text-decoration:none}
+
+
+
+
+
+    dialog 
+    {
+        display: inline-block;
+      position: relative;
+      z-index:1002;
+      border: none;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        width:100%;
+        background: none;
+        font-family:'FF Meta Offc W01',sans-serif;
+        font-size:14px;
+        color: #BC8B40;
+        font-weight: 300
+    }
+
+    @media (min-width: 30em) 
+    { 
+      dialog {
+        width: 100em; 
+      }
+    }
+    
+    textarea
+    {
+        outline-color: rgba(255,250,239,.82) !important;
+        box-shadow: none !important;
+        border-color: rgba(255,247,239,.82) !important 
+    }
+    
+    
+
+

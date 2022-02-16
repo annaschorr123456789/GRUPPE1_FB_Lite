@@ -1,58 +1,139 @@
 /*
-    THIS FILE IS THE STYLESHEET FOR THE FEED PAGE
-    (Feed.php)
-*/
-/* 
-    Created on : 04.02.2022, 09:45:31
-    Author     : Palo, Ilhan
+    THIS FILE IS THE STYLESHEET FOR THE FEED (HOME) PAGE
+    Feed.php
 */
 
-#Feed{
+.HeaderMed
+{  
+    font-weight:300;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:50px;
+    color:#034c73;
+    text-align: center;
+    margin-bottom: 20px
+}
+
+.HeaderBig
+{
+    font-weight:200;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:70px;
+    color:#034c73;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px
+}
+
+#Feed
+{
     display: grid;
-    grid-template-columns: 500px auto 3fr;
+    row-gap: 20px;
+}
+
+#DownloadIcon
+{
+    color: black !important;
+}
+
+#DownloadIcon:hover
+{
+    color: #034c73 !important;
+}
+
+#CommentIcon
+{
+    font-size: 50px;
+}
+
+#CommentIconNumber
+{
+    color: white;
+    font-size: 28px;
+    align-self: center;
+    margin-top: 8px;
+    margin-left: 3px;
+}
+
+.FeedElement
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
     align-items: center;
-    max-height: 500px;
+    max-height: 520px;
+    border: 10px solid green;
 }
 
-.Picture{
-    height: 500px;
-    width: 500px;
-    grid-column: 1/2;
+p
+{
+    border: 5px solid #888888;
 }
 
-.IconDiv{
-    grid-column: 2 / 3;
+.PictureArea
+{
+    grid-column: 1 / 2;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    height: 500px;
+    grid-template-rows: auto auto;
 }
 
-.CommentIcon{
+.Picture
+{
+    height: 400px;
+    width: 400px;
+    grid-column: 1/2;
     grid-row: 1 / 2;
 }
 
-.LikeIcon{
+.PictureDescription
+{
+    grid-row: 2 / 3;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    border: none;
+}
+
+.IconDiv
+{
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 50px;
+}
+
+.CommentIcon
+{
+    grid-row: 1 / 2;
+}
+
+.LikeIcon
+{
     grid-row: 2 / 3;
 }
 
-.DownLoadIcon{
+.DownLoadIcon
+{
     grid-row: 3 / 4;
 }
 
-.CommentSection{
+.CommentSection
+{
     grid-column: 3 / 4;
     max-height: 500px;
     display: grid;
     grid-template-rows: 5fr 1fr;
 }
 
-.CommentContainer{
+.CommentContainer
+{
     grid-column: 1 / 2;
     justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.Comment{
+.Comment
+{
     align-self: auto;
     justify-content: center;
     background: orange;
@@ -60,26 +141,30 @@
     grid-column: 3/4;
 }
 
-.UserSection{
+.UserSection
+{
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: 5fr 1fr;
 }
 
-.UserComment{
+.UserComment
+{
     grid-column: 1 / 2;
     margin: 10px;
-    margin-left: 0;
 }
 
-.SendCommentButton{
+.SendCommentButton
+{
     max-height: 50px;
     max-width: 200px;
     grid-column: 2 / 3;
     align-self: center;
 }
 
-.EndOfPage{
+.EndOfPage
+{
     align-self: center;
     justify-content: center;
+    border: none;
 }

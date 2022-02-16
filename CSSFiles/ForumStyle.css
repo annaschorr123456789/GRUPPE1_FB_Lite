@@ -1,0 +1,312 @@
+/*
+   THIS FILE IS THE STYLESHEET FOR ALL FORUM PAGES
+   ForumArticleOverviewPage.html
+   ForumArticlePage.html
+   ForumMainPage.html
+   ForumNewQuestionPage.html
+   ForumNewTopicPage.html
+*/
+
+.HeaderMed
+{  
+    font-weight:300;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:50px;
+    color:#034c73;
+    text-align: center;
+    margin-bottom: 20px
+}
+
+.HeaderBig
+{
+    font-weight:200;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:70px;
+    color:#034c73;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px
+}
+
+#TopicIndex
+{
+    padding:30px 0 0;
+    -webkit-box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
+    box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
+    border-top:1px solid rgba(0,0,0,.1);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image:none!important;
+    background:#4E4E4E
+}
+
+#TopicIndex .innerWrap
+{
+    padding-bottom:5px;
+    margin-bottom:-10px;
+    -moz-column-count:4;
+    column-count:4;
+    -webkit-column-count:4;
+    -moz-column-gap:30px;
+    -webkit-column-gap:30px;
+    column-gap:30px;width:100%;
+}
+
+#TopicIndex .innerCont
+{
+    -webkit-box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
+    box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
+    border-top:1px solid rgba(0,0,0,.1);
+    margin-left: 10px;
+    margin-right: 10px;
+
+    display:inline-block;
+    margin-bottom:30px;
+    width:100%;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    background:rgba(236,234,227,.82);
+    padding:25px 30px
+}
+
+#TopicIndex ul
+{
+    margin:0;
+}
+
+#TopicIndex ul a
+{
+    -webkit-transition:all .3s ease-out;
+    transition:all .3s ease-out;display:block;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden
+}
+
+#TopicIndex ul a:hover
+{
+    -webkit-transition:all 50ms linear;
+    transition:all 50ms linear;
+    -webkit-transform:translate(3px,0);
+    -ms-transform:translate(3px,0);
+    transform:translate(3px,0);
+    color: #034c73
+}
+
+a:hover{color:#B35340 ;-webkit-transition:color 0s linear;transition:color 0s linear;text-decoration:none}
+
+#TopicIndex ul a,.oneJob h3 a,ul#mainnav a.active{color:#BC8B40}
+
+
+#TopicIndex ul li
+{
+    list-style-type: none
+}
+
+#TopicIndex h4
+{
+    font-weight:700;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    margin:0 0 10px;
+    color:#B35340
+}
+
+#TopicIndex h3
+{
+    font-size:20;
+    display:inline-block;
+    margin-bottom:0px;
+    width:100%;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    padding:25px 30px;
+
+    font-weight:700;
+    color:#034c73;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    margin:0 0 0
+}
+
+#TopicIndex h3 a{color:#BC8B40;font-weight:800}
+#TopicIndex h3 a:hover{color:#D15923}
+
+.HeaderMed
+{
+
+    font-weight:200;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:70px;
+    color:#034c73;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px
+}
+
+#TopicIndex h2
+{
+    margin-bottom: 60px
+}
+
+#TopicIndex .QuestionText
+{
+
+    font-weight:400;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    margin:0 0 10px;
+    color:#034c73;
+}
+
+#TopicIndex .QuestionUser
+{
+
+    font-weight:300;
+    font-family:'FF Meta Offc W01', sans-serif;
+    font-size:14px;
+    margin:0 0 10px;
+    color:#BC8B40;
+    text-align: right
+}
+
+#TopicIndex .QuestionHeader
+{
+    color:#B35340;
+    font-weight:700;
+    -webkit-transition:all .3s ease-out;
+    transition:all .3s ease-out;display:block;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden
+}
+
+#TopicIndex .QuestionHeader:hover
+{
+    -webkit-transition:all 50ms linear;
+    transition:all 50ms linear;
+    -webkit-transform:translate(3px,0);
+    -ms-transform:translate(3px,0);
+    transform:translate(3px,0);
+    color: #034c73;
+    text-indent: 5px
+}
+
+#SortIcon
+{
+    margin-left: 10px;
+    width: 150%;
+    color: rgba(255,247,239,.82);
+
+}
+
+.SortBar
+{
+    font-weight:700;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:16px;
+    color: rgba(255,247,239,.82);
+    margin-bottom: 25px;
+    margin-left: 0;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+}
+
+.SortBar:hover
+{
+    color: #034c73;
+}
+
+#AddNewQuestion
+{
+    margin-right: 10px;
+    width: 150%;
+    color: rgba(255,247,239,.82);
+    -webkit-transition: color 1s;
+    transition: color 1s;
+}
+
+#AddNewQuestion:hover
+{
+    color: #034c73;
+}
+
+.Button
+{
+    font-family:'FF Meta Offc W01',sans-serif !important;
+    font-size:14px !important;
+    -webkit-transition: color 1s !important;
+    transition: color 1s !important;
+    border-color: #B35340 !important;
+    background-color: rgba(255,247,239,.82) !important;
+    color: #D15923 !important;
+    font-weight: 300 !important;
+}
+
+.Button:hover, .Button:active,  .Button:focus
+{
+    outline-color: rgba(255,250,239,.82)!important;
+    box-shadow: none !important;
+    background-color: #B35340 !important;
+    color: rgba(255,247,239,.82) !important
+}
+
+.popup 
+{
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.popup .popuptext 
+{
+    visibility: visible;
+    width: 300px;
+    background-color: #034c73;
+    color: rgba(255,247,239,.82) ;
+    text-align: center;
+    border-radius: 4px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+}
+
+.popup .popuptext::after 
+{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(255,247,239,.82) transparent transparent transparent;
+}
+
+.popup .show 
+{
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn 
+{
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+

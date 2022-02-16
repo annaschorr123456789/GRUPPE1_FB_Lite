@@ -1,9 +1,6 @@
 /*
-    THIS FILE IS THE STYLESHEET FOR THE NAVIGATION BAR ON TOP OF EVERY PAGE
-*/
-/* 
-    Created on : 04.02.2022, 09:45:31
-    Author     : Schorr, Anna
+    THIS FILE IS THE STYLESHEET FOR THE PROFILE PAGE
+    Profile.html
 */
 
 #NavBar
@@ -29,7 +26,13 @@
     color: #034c73 !important
 }
     
-#NavBar a:hover{color:#B35340 ;-webkit-transition:color 0s linear;transition:color 0s linear;text-decoration:none}
+#NavBar a:hover
+{
+    color:#B35340;
+    -webkit-transition:color 0s linear;
+    transition:color 0s linear;
+    text-decoration:none
+}
 
 #NavBar img
 {

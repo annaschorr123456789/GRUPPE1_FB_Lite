@@ -1,164 +1,161 @@
 <!DOCTYPE html>
 <html lang="de-DE" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch postmessage rgba backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransitions fontface"><!--<![endif]--><head>
-      
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Add description here">
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <![endif]-->
 
-    <title></title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="description" content="Add description here">
+        <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
 
-    <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/HeaderStyle.css?x=1" media="all">
-    <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/FooterStyle.css?x=1" media="all">
-    <link rel="stylesheet"  id="ownstyles-css" href="CSSFiles/ProfileStyle.css?x=1"  media="all">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../Font-Awesome-master/css/fontawesome.min.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="JavaScriptFiles/ForumFunctions.js"></script>
-    
-     <style>    
-        body {
-          background-image: url('paws2.png');
-        }
-    </style>
-</head>
-<body>
-<!-- MENU BAR -->
-    <div class='m-4' id='NavBar'>
-        <nav class='navbar navbar-expand-sm navbar-light'>
-        <div class='container-fluid'>
-            <img src='Logo_orange.svg'>
-            <a href='#' class='navbar-brand' style="font-family: 'Brush Script MT', cursive"> Pfotenglück</a>
-            <div id='navbarCollapse' class='collapse navbar-collapse' style='font-size:20'>
-                <ul class='nav navbar-nav'>
-                    <li class='nav-item dropdown'>
-                        <a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='fas fa-user'></i></a>
-                        <div class='dropdown-menu'>
-                            <a href='#' class='dropdown-item'>Profil</a>
-                            <a href='#' class='dropdown-item'>Favoriten</a>
-                            <div class='dropdown-divider'></div>
-                            <a href='#'class='dropdown-item'>Ausloggen</a>
-                        </div>
-                    </li>
-                    <li class='nav-item'>
-                        <div class='input-group rounded'>
-                            <input type='search' class='form-control rounded' placeholder='Suche...' aria-label='Search' aria-describedby='search-addon' />
-                            <span class='input-group-text border-0' id='search-addon'>
-                               <i class='fas fa-search'></i>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-                <ul class='nav navbar-nav ms-auto'>
-                    <li class='nav-item'>
-                        <a href='#' class='nav-link' >Feed</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a href='ForumMainPage.html' class='nav-link active'>Forum</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a href='Settings.html' class='nav-link'><i class='fas fa-cogs'></i></a>
-                    </li>
-                </ul>
-            </div>
+        <title></title>
+
+        <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/HeaderStyle.css?x=1" media="all">
+        <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/FooterStyle.css?x=1" media="all">
+        <link rel="stylesheet"  id="ownstyles-css" href="CSSFiles/ProfileStyle.css?x=1"  media="all">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="../Font-Awesome-master/css/fontawesome.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="JavaScriptFiles/ProfileFunctions.js"></script>
+
+        <style>    
+            body {
+                background-image: url('Img/paws2.png');
+            }
+        </style>
+        <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+    <body onload="GetUserData()">
+        <!-- MENU BAR -->
+        <div class='m-4' id='NavBar'>
+            <nav class='navbar navbar-expand-sm navbar-light'>
+                <div class='container-fluid'>
+                    <img src='Img/Logo_orange.svg'>
+                    <a href='Feed.php' class='navbar-brand' style="font-family: 'Brush Script MT', cursive"> Pfotenglück</a>
+                    <div id='navbarCollapse' class='collapse navbar-collapse' style='font-size:20'>
+                        <ul class='nav navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='fas fa-user'></i></a>
+                                <div class='dropdown-menu'>
+                                    <a href='Profile.html' class='dropdown-item'>Profil</a>
+                                    <a href='Favourites.html' class='dropdown-item'>Favoriten</a>
+                                    <div class='dropdown-divider'></div>
+                                    <a href='LogOut.php' class='dropdown-item'>Ausloggen</a>
+                                </div>
+                            </li>
+                            <li class='nav-item'>
+                                <div class='input-group rounded'>
+                                    <input type='search' class='form-control rounded' placeholder='Suche...' aria-label='Search' aria-describedby='search-addon' />
+                                    <span class='input-group-text border-0' id='search-addon'>
+                                        <i class='fas fa-search'></i>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class='nav navbar-nav ms-auto'>
+                            <li class='nav-item'>
+                                <a href='Feed.php' class='nav-link' >Feed</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='ForumMainPage.html' class='nav-link active'>Forum</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-    </div>
-    
-<!-- PAGE CONTENT -->
-<br>
-    <div class="PageHeaderBig">DEIN PROFIL</div><br>
-    <div class="PageHeaderSmall">HIER KANNST DU DEIN PROFIL ANPASSEN</div> <br><br>
-    <div class="container-fluid">
-        <div class="ContentGrid">
-            <div class="row">
-                <div class="col" id="ProfileOverview">
-                    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-                        <div class="card p-4" >
-                            <div class=" image d-flex flex-column justify-content-center align-items-center"> 
-                                <button class="btn btn-secondary"> <img src="Bilder/SampleUserPic.jpg" height="100" width="100" /></button> 
-                                <span class="name mt-3">Vorname Nachname</span> <span class="idd">username</span>
-                                <div class="text mt-3" id="Description">Beschreibung...<br><br> Beschreibung...Beschreibung...Beschreibung...Beschreibung...Beschreibung...Beschreibung... </div>
-                                <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span> </div>
-                                <div class=" px-2 rounded mt-4 date "> <span class="join">Mitglied seit 2.01.2022</span> </div>
+
+        <!-- PAGE CONTENT -->
+        <br>
+        <div class="PageHeaderBig">DEIN PROFIL</div><br>
+        <div class="PageHeaderSmall">HIER KANNST DU DEIN PROFIL ANPASSEN</div> <br><br>
+        <div class="container-fluid">
+            <div class="ContentGrid">
+                <div class="row">
+                    <div class="col" id="ProfileOverview">
+                        <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+                            <div class="card p-4" >
+                                <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+                                    <button class="btn btn-secondary"> <img src="Img/SampleUserPic.jpg" height="100" width="100" /></button> 
+                                    <br> <span class="idd" id="UserName">username</span>
+                                    <div class="text mt-3" id="Description">
+                                    </div>
+                                    <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span> </div>
+                                    <div class=" px-2 rounded mt-4 date" id="JoinDate"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-bottom: 0px !important">
+                            <div class="col" style="margin-bottom: 0px !important">
+                                <div class="innerCont" style="margin-bottom: 0px !important">
+                                    <br><h4>EINSTELLUNGEN</h4>
+                                    <h3> Passwort ändern</h3>
+
+                                    <form class="login-show" method="get">
+                                        <input style="width:200px" type="password" id="oldPassword" placeholder="Altes Passwort"><br>
+                                        <input style="width:200px" type="password" id="newPassword" placeholder="Neues Passwort"><br>
+                                        <input style="width:200px"  type="password" id="newPasswordValidate" placeholder="Neues Passwort bestätigen"><br>
+                                        <br><input class="Button" type="button" value="Passwort ändern" onclick="CheckNewPassword()">
+                                    </form>
+                                </div>
+                            </div>  
+                            <div class="col" style="margin-bottom: 0px !important">
+                                <div class="innerCont" style="margin-bottom: 0px !important">
+                                    <h3 style="margin-top: 53px;"> E-Mail-Adresse ändern</h3>
+                                    <div class="login-show">
+                                        <input id="oldEmail" style="width:200px" type="email" placeholder="Alte E-Mail"><br>
+                                        <input id="newEmail" style="width:200px" type="email" placeholder="Neue E-Mail"><br>
+                                        <input id="newEmailValidate" style="width:200px"  type="email" placeholder="Neue E-Mail bestätigen"><br>
+                                        <br><input class="Button" type="button" onclick="CheckOldEmailAdress()" value="E-Mail-Adresse ändern">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="row" style="margin-top: 0px !important">
+                            <div class="col" style="margin-top: 0px !important">
+                                <div class="innerCont" style="margin-top: 0px !important">
+                                    <h3> Beschreibung ändern</h3>
+                                    <div class="login-show">
+                                        <textarea style="margin-left: 30px; width: 470px" rows="10" placeholder="Neue Beschreibung" id="NewDescription"></textarea><br>
+                                        <br><input class="Button" style=" margin-bottom: 25px" type="button" value="Beschreibung ändern" onclick="ChangeDescription()">
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col" style="margin-top: 0px !important">
+                                <div class="innerCont" style="margin-top: 0px !important">
+                                    <h3 style="margin-top: 0px;"> Usernamen ändern</h3>
+                                    <div class="login-show">
+                                        <input style="width:200px" id="NewUserName" type="text" placeholder="Neuer Username"><br>
+                                        <br><input class="Button" style="margin-top: 30px !important; margin-bottom: 217px" type="button" value="Useramen ändern" onclick="ChangeUserName()"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="row" style="margin-bottom: 0px !important">
-                                <div class="col" style="margin-bottom: 0px !important">
-                                    <div class="innerCont" style="margin-bottom: 0px !important">
-                                    <br><h4>EINSTELLUNGEN</h4>
-                                    <h3> Passwort ändern</h3>
-                                    <div class="login-show">
-                                        <input style="width:200px" type="password" placeholder="Altes Passwort"><br>
-                                        <input style="width:200px" type="password" placeholder="Neues Passwort"><br>
-                                        <input style="width:200px"  type="password" placeholder="Neues Passwort bestätigen"><br>
-                                            <br><input class="Button" type="button" value="Passwort ändern">
-                                            <br><a href="">Passwort vergessen?</a>
-                                        </div>
-                                    </div>
-                                </div>  
-                        <div class="col" style="margin-bottom: 0px !important">
-                                    <div class="innerCont" style="margin-bottom: 0px !important">
-                                    <h3 style="margin-top: 50px;"> E-Mail-Adresse ändern</h3>
-                                    <div class="login-show">
-                                        <input style="width:200px" type="email" placeholder="Alte E-Mail"><br>
-                                        <input style="width:200px" type="email" placeholder="Neue E-Mail"><br>
-                                        <input style="width:200px"  type="email" placeholder="Neue E-Mail bestätigen"><br>
-                                                <br><input class="Button" style="margin-bottom: 27px" type="button" value="E-Mail-Adresse ändern">
-                                    </div>
-                                </div>
-                                </div>
-                    </div>  
-                    <div class="row" style="margin-top: 0px !important">
-                        <div class="col" style="margin-top: 0px !important">
-                                    <div class="innerCont" style="margin-top: 0px !important">
-                                    <h3> Vor- / Nachnamen ändern</h3>
-                                    <div class="login-show">
-                                        <input style="width:200px" type="text" placeholder="Neuer Vorname"><br>
-                                        <input style="width:200px" type="text" placeholder="Neuer Nachname"><br>
-                                            <br><input class="Button" style=" margin-bottom: 25px" type="button" value="Namen ändern">
-                                        </div>
-                                    </div>
-                                </div>  
-                        <div class="col" style="margin-top: 0px !important">
-                                    <div class="innerCont" style="margin-top: 0px !important">
-                                    <h3 style="margin-top: 0px;"> Usernamen ändern</h3>
-                                    <div class="login-show">
-                                        <input style="width:200px" type="text" placeholder="Neuer Username"><br>
-                                                <br><input class="Button" style="margin-top: 30px !important; margin-bottom: 25px" type="button" value="Useramen ändern">
-                                    </div>
-                                </div>
-                                </div>
-                    </div>
-                </div>
+
             </div>
-            
         </div>
-    </div>
-    
-<!-- FOOTER -->
-<div class='row'>
+
+        <!-- FOOTER -->
+        <div class='row'>
             <br>
             <div class='container'>
-               <div class='d-flex flex-wrap fixed-bottom justify-content-between align-items-center border-top bg-light'>
-                <p class='col-md-4 mb-0 text-muted'>© 2022 Pfotenglück GmbH</p>
+                <div class='d-flex flex-wrap fixed-bottom justify-content-between align-items-center border-top bg-light'>
+                    <p class='col-md-4 mb-0 text-muted'>© 2022 Pfotenglück GmbH</p>
 
-                <ul class='nav col-md-4 justify-content-end'>
-                   <li class='nav-item'><a href='FooterKontakt.html' class='nav-link px-2 text-muted'>Kontakt</a></li>
-                   <li class='nav-item'><a href='FooterFAQs.html' class='nav-link px-2 text-muted'>FAQs</a></li>
-                   <li class='nav-item'><a href='FooterAbout.html' class='nav-link px-2 text-muted'>Über uns</a></li>
-                </ul>
-               </div>
+                    <ul class='nav col-md-4 justify-content-end'>
+                        <li class='nav-item'><a href='FooterKontakt.html' class='nav-link px-2 text-muted'>Kontakt</a></li>
+                        <li class='nav-item'><a href='FooterFAQs.html' class='nav-link px-2 text-muted'>FAQs</a></li>
+                        <li class='nav-item'><a href='FooterAbout.html' class='nav-link px-2 text-muted'>Über uns</a></li>
+                    </ul>
+                </div>
             </div>
-            </div>
-</body>
+        </div>
+    </body>
 </html>

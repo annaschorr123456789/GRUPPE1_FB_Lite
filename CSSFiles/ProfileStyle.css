@@ -1,10 +1,6 @@
 /*
     THIS FILE IS THE STYLESHEET FOR THE PROFILE SETTINGS PAGE
-    (Profile.html)
-*/
-/* 
-    Created on : 04.02.2022, 09:45:31
-    Author     : Schorr, Anna
+    Profile.html
 */
 
 .PageHeaderBig
@@ -20,7 +16,6 @@
 
 .PageHeaderSmall
 {
-
     font-weight:300;
     font-family:'FF Meta Offc W01',sans-serif;
     font-size:50px;
@@ -41,6 +36,7 @@
 {
     max-width: 500px !important;
 }
+
 .ContentGrid
 {
     -webkit-box-shadow:0 1px 10px 0 rgba(0,0,0,.1) inset;
@@ -101,7 +97,6 @@
     -webkit-border-radius:2px;
     -moz-border-radius:2px;
     padding:25px 30px;
-
     font-weight:700;
     color:#034c73;
     font-family:'FF Meta Offc W01',sans-serif;
@@ -110,16 +105,16 @@
 }
 
 .Button
-{
-    font-family:'FF Meta Offc W01',sans-serif !important;
-    font-size:14px !important;
-    -webkit-transition: color 1s !important;
-    transition: color 1s !important;
-    border-color: #B35340 !important;
-    background-color: rgba(255,247,239,.82) !important;
-    color: #D15923 !important;
-    font-weight: 300 !important;
-}
+    {
+        font-family:'FF Meta Offc W01',sans-serif !important;
+        font-size:14px !important;
+        -webkit-transition: color 1s !important;
+        transition: color 1s !important;
+        border-color: #B35340 !important;
+        background-color: rgba(255,247,239,.82) !important;
+        color: #D15923 !important;
+        font-weight: 300 !important;
+    }
 
 .Button:hover, .Button:active,  .Button:focus
 {
@@ -152,43 +147,49 @@ input, .ContentGrid a
     color: #034c73 !important
 }
     
-.ContentGrid a:hover{color:#B35340 ;-webkit-transition:color 0s linear;transition:color 0s linear;text-decoration:none}
+.ContentGrid a:hover
+{
+    color:#B35340;
+    -webkit-transition:color 0s linear;
+    transition:color 0s linear;
+    text-decoration:none
+}
 
+dialog 
+{
+    display: inline-block;
+    position: relative;
+    z-index:1002;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
 
+    width:100%;
+    background: none;
+    font-family:'FF Meta Offc W01',sans-serif;
+    font-size:14px;
+    color: #BC8B40;
+    font-weight: 300
+}
 
+@media (min-width: 30em) 
+{ 
+  dialog 
+  {
+    width: 100em; 
+  }
+}
 
+textarea
+{
+    outline-color: rgba(255,250,239,.82) !important;
+    box-shadow: none !important;
+    border-color: rgba(255,247,239,.82) !important 
+}
 
-    dialog 
-    {
-        display: inline-block;
-      position: relative;
-      z-index:1002;
-      border: none;
-        margin-left: 10px;
-        margin-right: 10px;
-
-        width:100%;
-        background: none;
-        font-family:'FF Meta Offc W01',sans-serif;
-        font-size:14px;
-        color: #BC8B40;
-        font-weight: 300
-    }
-
-    @media (min-width: 30em) 
-    { 
-      dialog {
-        width: 100em; 
-      }
-    }
-    
-    textarea
-    {
-        outline-color: rgba(255,250,239,.82) !important;
-        box-shadow: none !important;
-        border-color: rgba(255,247,239,.82) !important 
-    }
-    
-    
+#UserName
+{
+    font-weight: 300;
+}
 
 

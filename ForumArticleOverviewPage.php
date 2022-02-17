@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="de-DE" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch postmessage rgba backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransitions fontface"><!--<![endif]--><head>
-
+<html lang="de-DE" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch postmessage rgba backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransitions fontface"><!--<![endif]-->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -13,22 +12,30 @@
 
         <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/HeaderStyle.css" media="all">
         <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/FooterStyle.css" media="all">
-        <link rel="stylesheet"  id="ownstyles-css" href="CSSFiles/ForumStyle.css?x=1"  media="all">
+        <link rel="stylesheet"  id="ownstyles-css" href="CSSFiles/ForumStyle.css"  media="all">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="../Font-Awesome-master/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../Font-Awesome-5.15.4/css/fontawesome.min.css">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="JavaScriptFiles/ForumFunctions.js"></script>
+        <script src="JavaScriptFiles/ForumArticleOverviewFunction.js"></script>
 
         <style>    
             body {
                 background-image: url('Img/paws2.png');
             }
         </style>
+
+        <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
     </head>
-    <body>
+    <body onload="GetUserData(); LoadQuestions(<?php
+    if (filter_has_var(INPUT_GET, "TopicId")) {
+        echo filter_input(INPUT_GET, "TopicId");
+    } else {
+        echo "1";
+    }
+    ?>)">
         <!-- MENU BAR -->
         <div class='m-4' id='NavBar'>
             <nav class='navbar navbar-expand-sm navbar-light'>
@@ -42,7 +49,7 @@
                                 <div class='dropdown-menu'>
                                     <a href='Profile.html' class='dropdown-item'>Profil</a>
                                     <div class='dropdown-divider'></div>
-                                    <a href='LogOut.php' class='dropdown-item'>Ausloggen</a>
+                                    <a href='LogOut.php'class='dropdown-item'>Ausloggen</a>
                                 </div>
                             </li>
                             <li class='nav-item'>
@@ -68,49 +75,48 @@
         </div>
 
         <!-- FORUM -->
-        <div> <p class="HeaderBig">FÜGE EINE NEUE FRAGE HINZU</p> <br></div><br>
+        <br>
+        <div> <p class="HeaderMed">ALLE BEITRÄGE ZUM THEMA </p> <br></div><br>
+        <div class="container-fluid">
+            <div id="TopicIndex">
+                <div style="margin-left: 20px">
+                    <div class="row">
+                        <div class="col-1">
+                            <i id="SortIcon" class="fas fa-filter fa-2x"></i>
+                        </div>
+                        <div class="col">
+                            <a href='#' class='nav-link data-toggle' data-bs-toggle='dropdown'><div onclick="Sort()" class="SortBar">Sortieren & Filtern</div></a>
+                            <div class='dropdown-menu'>
+                                <a href='#' class='dropdown-item'>Neueste zuerst</a> 
+                                <a href='#' class='dropdown-item'>Älteste zuerst</a>
+                                <a href='#' class='dropdown-item'>Viele Antworten zuerst</a>
+                                <a href='#' class='dropdown-item'>Wenige Antworten zuerst</a>
+                                <div class='dropdown-divider'></div>
+                                <div class='dropdown-item'><input type="checkbox" id="OldestFirst" name="subscribe" value="newsletter"> Fragen ohne Antworten </div>
+                                <div class='dropdown-item'><input type="checkbox" id="OldestFirst" name="subscribe" value="newsletter"> Fragen mit Antworten </div>
+                                <div class='dropdown-item'><input type="checkbox" id="OldestFirst" name="subscribe" value="newsletter"> Fragen ohne Bilder </div>
+                                <div class='dropdown-item'><input type="checkbox" id="OldestFirst" name="subscribe" value="newsletter"> Fragen mit Bildern </div>
+                                <div class='dropdown-item'><input type="checkbox" id="OldestFirst" name="subscribe" value="newsletter"> Status geschlossen </div>
+                                <div class='dropdown-item'><input type="checkbox" id="OldestFirst" name="subscribe" value="newsletter"> Status offen </div>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <a href="ForumNewQuestionPage.html"><i onclick="AddQuestion()" id="AddNewQuestion" class="fas fa-plus fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
 
         <div class="container-fluid">
             <div id="TopicIndex">
                 <div class="ArticleListArea">
-                    <div style="margin-left: 30px; margin-right:50px">
-                        <div class="row">
-                            <div class="innerCont">
-                                <form>
-                                    <div class="form-group" style="margin-right: 30px">
-                                        <label for="QuestionTitle" class="QuestionLabel">Gib hier den Titel deiner Frage ein.</label><br>
-                                        <dialog id="dialog">
-                                            Der Titel sollte möglichst ein Satz sein, in dem der Kern deiner Frage deutlich wird.
-                                        </dialog>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                    </div> <br><br>
-                                    <div class="form-group"  style="margin-right: 30px">
-                                        <label for="QuestionBody" class="QuestionLabel">Gib hier eine ausführliche Beschreibung deiner Frage ein.</label><br>
-                                        <dialog id="dialog">
-                                            Hier kannst du deine Frage so ausführlich, wie du möchtest, näher beschreiben.
-                                        </dialog>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="popup" onmouseover="myFunction()">
-                                <input class="Button" onclick="location.href = 'ForumMainPage.html'" value=" Ab ins Forum damit!"></<input> <br><br>
-                                <span class="popuptext" id="myPopup">Die Frage wird erst nach erfolgreicher Überprüfung durch unser Team online gehen. Dies kann einige Minuten dauern.</span><br>
-                            </div>
-                        </div>
+                    <div style="margin-left: 20px; margin-right:40px" id="QuestionContainer">
+                        
                     </div>
                 </div>
-                <script>
-                    function myFunction() {
-                        var popup = document.getElementById("myPopup");
-                        popup.classList.toggle("show");
-                    }
-                </script>
-                <br>
-            </div>
-        </div>
+            </div> 
+        </div> 
 
         <!-- FOOTER -->
         <div class='row'>
@@ -127,5 +133,7 @@
                 </div>
             </div>
         </div>
-    </body>
+        <script type="text/javascript">(function () {
+                window['__CF$cv$params'] = {r: '6ddd805ead5f5b62', m: 'XQSNeyd0.vXud4Ry4znGsDva_ZAKicH1lkPz7DLmCrQ-1644917258-0-AbGX4dOYEKYPEVAtuyGMFOka426lC0dDN5txAzrx9zx8jTuNlpWXO35knJYNaGtQKvkPhP5wsyEnsNno7/SfHXC6QQGYsmLRfiEQaZBJRoPBAWh+aOO39HE4feQl9pHW1JptkVju8zXpTIYH32uLAhJvLYOBq4Ma93lBxry3Ufl5N1JGB7hIUJYhlMTJWBDgVOBjdMx/AbryMq8me/plpqIOKr26UN7B4h9grbaccxZR', s: [0x3f169168e6, 0x4c690cf858], }
+            })();</script></body>
 </html>

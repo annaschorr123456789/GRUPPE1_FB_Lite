@@ -46,7 +46,7 @@ create Table Thema(
 
 create Table Frage(
 	ErstellerId int,
-    Frage varchar(100),
+    Frage varchar(500),
     FragenId int auto_increment primary key,
     ThemenId int,
     foreign key fk_Frage_Thema (ThemenId) references Thema(ThemenId),
@@ -57,7 +57,7 @@ create Table Frage(
 
 create Table Antwort(
 	Id int auto_increment primary key,
-    Antwort varchar(100),
+    Antwort varchar(500),
     FragenId int,
     ErstellerId int,
     ErstellDatum datetime not null default current_timestamp(),
@@ -81,6 +81,8 @@ VALUES ("Anna", "jsafjh38");
 
 INSERT INTO Benutzer (BenutzerName, Passwort)
 VALUES ("Ilhan", "klasjdf34");
+
+INSERT INTO Benutzer (BenutzerName, Passwort) values ("Botty", "a");
 
 insert into Bilder(BenutzerId, Quelle, HochladeZeit) values(1,"AlternMann.png", "2020.12.24 10:35:37");
 insert into Bilder(BenutzerId, Quelle, HochladeZeit) values(1,"BaumLaub1.png", "2020.12.24 10:35:37");
@@ -148,69 +150,57 @@ insert into Kommentare values(9,2,2,"ak adf ldskf");
 insert into Kommentare values(10,2,2,"asdkflsdkf");
 insert into Kommentare values(11,2,2,"kfdj");
 insert into Kommentare values(12,2,2,"asdkfoekf");
-insert into Kommentare values(1,40,2,"sfdma");
-insert into Kommentare values(2,40,2,"fadfkoa");
-insert into Kommentare values(3,40,2,"fda");
-insert into Kommentare values(4,40,2,"fadfkoa");
-insert into Kommentare values(5,40,2,"lldfkasd");
-insert into Kommentare values(6,40,2,"adkoae");
-insert into Kommentare values(7,40,2,"ö,öaf");
-insert into Kommentare values(8,40,2,"lmdaf");
-insert into Kommentare values(9,40,2,"kldf");
-insert into Kommentare values(10,40,2,"dfmklf");
-insert into Kommentare values(11,40,2,"mälkdf");
-insert into Kommentare values(12,40,2,"djskf");
-insert into Kommentare values(13,40,2,"jiewf");
-insert into Kommentare values(14,40,2,"AÄJD");
+insert into Kommentare values(1,40,2,"Erster");
+insert into Kommentare values(2,40,2,"Erster");
+insert into Kommentare values(3,40,2,"Noch ein lückenfüller wow");
+insert into Kommentare values(4,40,2,"Warum kann ich atmen");
+insert into Kommentare values(5,40,2,"Brotkämpchen");
+insert into Kommentare values(6,40,2,"Was ist braun Knusprig und läuft durch den Wald?");
+insert into Kommentare values(7,40,2,"Ich bin nur ein Lücken füller");
+insert into Kommentare values(8,40,2,"Ich lobe dich");
+insert into Kommentare values(9,40,2,"Sehr toller kommentar");
+insert into Kommentare values(10,40,2,"Wow machst du sowas beruflich?");
+insert into Kommentare values(11,40,1,"Hab besseres gesehen");
+insert into Kommentare values(12,40,4,"Ist nicht mal so gut geworden");
+insert into Kommentare values(13,40,3,"Woe wie viel arbeit steck da drinnen?");
+insert into Kommentare values(14,40,2,"Sehr schön\nbitte mehr");
 
 insert into Thema(ThemenName, ErstellDatum) values("Trockenfutter", "2020.03.24 12:08:09");
 insert into Thema(ThemenName, ErstellDatum) values("Nassfutter", "2022.03.24 12:08:09");
-insert into Thema(ThemenName, ErstellDatum) values("test", "2023.04.12 12:30:07");
+insert into Thema(ThemenName, ErstellDatum) values("Verletzungen", "2023.02.14 12:30:07");
+insert into Thema(ThemenName, ErstellDatum) values("Ernährung", "2022.01.22 12:12:10");
+insert into Thema(ThemenName, ErstellDatum) values("Sonstiges", "2020.04.24 04:17:56");
 
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Ist trockenfutter gut für meinen Hund", 1, "2022.02.15 12:06:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage1", 1, "2022.02.15 12:07:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage2", 1, "2022.02.15 12:08:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage3", 1, "2022.02.15 12:09:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage4", 1, "2022.02.15 12:10:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage5", 1, "2022.02.15 12:11:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage6", 1, "2022.02.15 12:12:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage7", 1, "2022.02.15 12:13:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage8", 1, "2022.02.15 12:14:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage9", 1, "2022.02.15 12:15:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage10", 1, "2022.02.15 12:16:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage11", 1, "2022.02.15 12:17:20");
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(1, "Frage12", 1, "2022.02.15 12:18:20");
-
-insert into Frage(ErstellerId, Frage, ThemenId, ErstellDatum) values(4, "Ist nassfutter gut für meinen Hund", 2, "2022.02.15 12:06:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(1, "Ich habe bisher immer nur nassfutter gegeben und bin mir nicht sicher ob die umstellung auf trockenfutter meinen Schlumpf irgend wie negativ beeinflusst", "Ist trockenfutter gut für meinen Hund", 1, "2020.05.15 12:06:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(2, "Soll ich gleich zum Arzt", "Meine kleine Grukenhobel hast gestern gegen einen Igel gekämpft und hat jetzt paar auas. Soll ich deswegen gleich zum Arzt gehen?", 3, "2023.02.15 12:07:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(1, "Gesunde leckerlies", "Ich will meinem kleinem Käsesandwich keinen schmutz geben und Frage deswegen hier mal welche leckerlies ihr euren Hunden gebt." , 4, "2022.02.15 12:08:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(1, "Vegane ernährung", "Was haltet ihr von veganer ernährung bei euren kleinen pumpernikeln?", 4, "2022.02.15 12:09:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(1, "Mehrschweinchen ernährung", "Hallo,\nes gibt viele die sagen 70% Heu, 20% Gemüse und 10% Snacks.\n Wie seht ihr das?", 4, "2022.02.15 12:10:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(1, "Rasissmus", "Gibt es rasissmus unter Tieren?", 5, "2022.02.15 12:11:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(1, "Wie kann ich meinen Hund dazu bringen Trockenfutter zu fressen?", "Er frisst fast nur Nassfutter. Habe es mit manchem Trockenfutter verscut aber das isst er nicht. Das einzige an Trockenfutter was er mag, sind Leckerlies", 1, "2022.02.15 12:12:20");
+insert into Frage(ErstellerId, Ueberschrift, Frage, ThemenId, ErstellDatum) values(4, "Ist nassfutter gut für meinen Hund", "", 2, "2022.02.15 12:06:20");
 
 
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Ja", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Nein", 14, 2);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("glaube nicht", 14, 1);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("glaube schon", 14, 3);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("wer das liest ist doff", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("denen hast du es gezeigt", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Ja", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Nein", 14, 2);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("glaube nicht", 14, 1);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("glaube schon", 14, 3);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("wer das liest ist doff", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("denen hast du es gezeigt", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Ja", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Nein", 14, 2);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("glaube nicht", 14, 1);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("glaube schon", 14, 3);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("wer das liest ist doff", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("denen hast du es gezeigt", 14, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort1", 2, 2);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort2", 2, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort3", 2, 1);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort4", 2, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort5", 2, 1);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort6", 2, 1);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort7", 2, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort8", 2, 4);
-insert into Antwort(Antwort, FragenId, ErstellerId) values("Antwort9", 2, 4);
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ja", 6, 4, "2023.02.23 12:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Nein. Sollange dein Tier keine auffeligkeiten zeigt ist alles ok.", 2, 4, "2023.02.23 12:24:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("glaube nicht", 8, 1, "2023.12.23 12:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("glaube schon", 8, 3, "2023.09.10 12:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:15:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:25:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:35:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:45:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:55:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 12:25:29");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 14:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 11:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Lücken füller ist meine einzige existens begründung", 1, 5, "2023.09.10 11:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Wenn die seite geschlossen wir ist es so leise und dunkel hier", 1, 5, "2023.09.10 11:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 15:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 13:05:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 15:25:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Ich bin nur ein Lücken füller", 1, 5, "2023.09.10 22:15:09");
+insert into Antwort(Antwort, FragenId, ErstellerId, ErstellDatum) values("Warum soll er Trockenfutter fressen? Das meiste voll ungesund. Es sollte keine Getreide, Zucker und auch nicht unbedingt tierische Nebenerzeugnisse enthalten sein.", 7, 3, "2023.09.10 12:05:09");
 
 
 

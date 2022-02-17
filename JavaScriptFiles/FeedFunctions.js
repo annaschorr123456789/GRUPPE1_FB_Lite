@@ -1,3 +1,8 @@
+/*
+    THIS FILE CONTAINS FUNCTIONS FOR THE FEED (HOME) PAGE
+    Feed.php
+*/
+
 var StartRow = 1;
 var EndRow = 2;
 const PicturePath = "Img/";

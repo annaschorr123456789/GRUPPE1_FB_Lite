@@ -1,7 +1,7 @@
 /*
    THIS FILE IS THE STYLESHEET FOR ALL FORUM PAGES
-   ForumArticleOverviewPage.html
-   ForumArticlePage.html
+   ForumArticleOverviewPage.php
+   ForumArticlePage.php
    ForumMainPage.html
    ForumNewQuestionPage.html
    ForumNewTopicPage.html
@@ -310,3 +310,19 @@ a:hover{color:#B35340 ;-webkit-transition:color 0s linear;transition:color 0s li
     to {opacity:1 ;}
 }
 
+.answerContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 25px;
+    background-color: orange;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.answer{
+    grid-column: 1 / 2;
+}
+
+.UserDescription{
+    grid-column: 2 / 3;
+}

@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-<html lang="de-DE" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch postmessage rgba backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransitions fontface"><!--<![endif]--><head>
-
+<html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta name="description" content="Add description here">
-        <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-
         <title></title>
-
+        
         <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/HeaderStyle.css" media="all">
         <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/FooterStyle.css" media="all">
-        <link rel="stylesheet"  id="ownstyles-css" href="CSSFiles/ForumStyle.css?x=1"  media="all">
+        <link rel="stylesheet" id="ownstyles-css" href="CSSFiles/ForumStyle.css?x=1" media="all">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="../Font-Awesome-master/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../Font-Awesome/css/fontawesome.min.css">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="JavaScriptFiles/ForumFunctions.js"></script>
-
+        <script src="JavaScriptFiles/ForumArticlePageFunctions.js?x=1" type="text/javascript"></script>
         <style>    
             body {
                 background-image: url('Img/paws2.png');
             }
         </style>
     </head>
-    <body>
+    <body onload="GetUserData()">
+
         <!-- MENU BAR -->
         <div class='m-4' id='NavBar'>
             <nav class='navbar navbar-expand-sm navbar-light'>
@@ -59,7 +52,7 @@
                                 <a href='Feed.php' class='nav-link' >Feed</a>
                             </li>
                             <li class='nav-item'>
-                                <a href='ForumMainPage.html' style="color: #034c73 !important" class='nav-link active'>Forum</a>
+                                <a href='ForumMainPage.html' class='nav-link active' style="color: #034c73 !important">Forum</a>
                             </li>
                         </ul>
                     </div>
@@ -67,50 +60,35 @@
             </nav>
         </div>
 
-        <!-- FORUM -->
-        <div> <p class="HeaderBig">FÜGE EINE NEUE FRAGE HINZU</p> <br></div><br>
+        <!-- PAGE CONTENT -->
+        <?php
+        require_once 'PHPFiles/FaceBookLiteConnection.php';
+        $pdo = new FaceBookLiteConnection();
+        if (!filter_has_var(INPUT_GET, "QuestionId")) {
+            echo "<h1>Die Frage wurde nicht gefunden<h1>";
+            return;
+        }
 
-        <div class="container-fluid">
-            <div id="TopicIndex">
-                <div class="ArticleListArea">
-                    <div style="margin-left: 30px; margin-right:50px">
-                        <div class="row">
-                            <div class="innerCont">
-                                <form>
-                                    <div class="form-group" style="margin-right: 30px">
-                                        <label for="QuestionTitle" class="QuestionLabel">Gib hier den Titel deiner Frage ein.</label><br>
-                                        <dialog id="dialog">
-                                            Der Titel sollte möglichst ein Satz sein, in dem der Kern deiner Frage deutlich wird.
-                                        </dialog>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                    </div> <br><br>
-                                    <div class="form-group"  style="margin-right: 30px">
-                                        <label for="QuestionBody" class="QuestionLabel">Gib hier eine ausführliche Beschreibung deiner Frage ein.</label><br>
-                                        <dialog id="dialog">
-                                            Hier kannst du deine Frage so ausführlich, wie du möchtest, näher beschreiben.
-                                        </dialog>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="15"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="popup" onmouseover="myFunction()">
-                                <input class="Button" onclick="location.href = 'ForumMainPage.html'" value=" Ab ins Forum damit!"></<input> <br><br>
-                                <span class="popuptext" id="myPopup">Die Frage wird erst nach erfolgreicher Überprüfung durch unser Team online gehen. Dies kann einige Minuten dauern.</span><br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <script>
-                    function myFunction() {
-                        var popup = document.getElementById("myPopup");
-                        popup.classList.toggle("show");
-                    }
-                </script>
-                <br>
-            </div>
-        </div>
+        if (!filter_var(filter_input(INPUT_GET, "QuestionId"), FILTER_VALIDATE_INT)) {
+            echo "<h1>Netter versuch, aber die Id der Frage muss ein Integer sein</h1>";
+            return;
+        }
+        echo "<script>onscroll='AddNewAnswersIfNecessary(" . filter_input(INPUT_GET, "QuestionId") . ")'</script>";
+        $sql = "select t.ThemenName as Topic, b.BenutzerName as CreatorName, Frage as Question from Frage f join thema t on f.ThemenId = t.ThemenId join benutzer b on f.ErstellerId = b.BenutzerId where f.FragenId = " . filter_input(INPUT_GET, "QuestionId") . ";";
+        $res = $pdo->query($sql);
+        if ($res == null) {
+            echo "<h1>Die Frage wurde nicht gefunden<h1>";
+            return;
+        }
+        echo "<h1> " . $res[0]["Topic"] . "</h1>";
+        echo "<h4>Frage von " . $res[0]["CreatorName"] . "</h4>";
+        echo "<h5>" . $res[0]["Question"] . "</h5>";
+        echo "<div class='answerContainer'></div>";
+        echo "<script>AddNewAnswersIfNecessary(" . filter_input(INPUT_GET, "QuestionId") . ")</script>";
+        ?>
+        <br>
+        <textarea placeholder="Schreibe hier deine Antwort" id="UserComment"></textarea>
+        <button onclick="AddAnswerToQuestion(<?php echo filter_input(INPUT_GET, "QuestionId") ?>)">Antworten</button>
 
         <!-- FOOTER -->
         <div class='row'>

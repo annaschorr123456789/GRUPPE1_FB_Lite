@@ -19,6 +19,7 @@ session_start();
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="BootstrapSource/bootstrap-5.0.2-dist/js/bootstrap.min.js"  crossorigin="anonymous"></script>
         <script>src = "JavaScriptFiles/RegisterFunctions.js"</script>
+        <script>src = "JavaScriptFiles/ForumFunctions.js"</script>
 
         <style>    
             body 
@@ -38,7 +39,21 @@ session_start();
                     <input type="email" name="email" required placeholder="E-Mail">
                     <input  type="password" id="psw" name="psw" placeholder="Passwort" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     <input  type="password" name="pswconf" id="pswconf" title="Password must match" placeholder="Passwort bestätigen" required><br>
-                    <button  type="submit" value="submit">Registrieren</button>
+
+                    <div class="row">
+                        <div class="popup" onmouseover="myFunction()">
+                            <button class="Button" type="submit" value="submit">Registrieren</button>
+                            <span class="popuptext" id="myPopup">Du musst dich nach einer erfolgreichen Registrierung erst einmal einloggen.</span><br>
+                        </div>
+                    </div>
+                    <script>
+                        function myFunction() {
+                            var popup = document.getElementById("myPopup");
+                            popup.classList.toggle("show");
+                        }
+                    </script>
+
+
                 </form>
             </div>
             <div class="overlay-panel overlay-right">

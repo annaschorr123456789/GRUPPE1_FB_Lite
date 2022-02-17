@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of loginParameterClass
- *
- * @author z0047brw
- */
 require_once 'FaceBookLiteConnection.php';
 
 session_start();
@@ -36,7 +25,6 @@ class loginParameterClass {
             }
         }
         $this->password = md5(filter_input(INPUT_POST, "psw", FILTER_DEFAULT));
-//            echo $this->password;
     }
 
     public function __getUsername() {
@@ -69,7 +57,6 @@ class loginParameterClass {
             echo 'Abfrage fehlgeschlagen: ' . $e->getMessage();
             die();
         }
-
 
         $row = $stmt->fetch();
         if ($row) {

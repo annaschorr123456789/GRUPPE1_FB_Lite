@@ -1,10 +1,14 @@
+/*
+    THIS FILE CONTAINS FUNCTIONS FOR THE FORUM PAGES
+   ForumNewQuestionPage.html
+   ForumNewTopicPage.html
+*/
 
 function openDialog(id)
 {
     var dialog = document.querySelector(id);
 
     if (!dialog.hasAttribute('open')) {
-        // show the dialog 
         dialog.setAttribute('open', 'open');
     }
 }

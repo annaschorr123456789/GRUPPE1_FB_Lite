@@ -1,3 +1,7 @@
+/*
+    THIS FILE CONTAINS FUNCTIONS FOR THE REGISTRATION PAGE
+    Register.php
+*/
 
 var myInput;
 var myInputConf;
@@ -91,16 +95,13 @@ function init()
     {
         if ((myInput.value == myInputConf.value) && myInput.value !== 0)
         {
-            //  alert("passwörter stimmen überein");
             confirmed.classList.remove("invalid");
             confirmed.classList.add("valid");
         } else
         {
-            // alert("passwörter stimmen nicht überein");
             confirmed.classList.remove("valid");
             confirmed.classList.add("invalid");
         }
     }
-
 }
 window.onload = init;

@@ -1,3 +1,8 @@
+/*
+    THIS FILE CONTAINS FUNCTIONS FOR THE PROFILE PAGE
+    Profile.html
+*/
+
 var UserId;
 var UserName;
 

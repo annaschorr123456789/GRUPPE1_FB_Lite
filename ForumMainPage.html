@@ -19,14 +19,15 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="JavaScriptFiles/ForumMainPageFunctions.js?x=1"/>
 
         <style>    
             body {
-                background-image: url('Img/paws2.png');
+                background-image: url('Img/paws2.png') !important;
             }
         </style>
-    </head>
-    <body>
+        <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+    <body onload="LoadNewLine()">
 
         <!-- MENU BAR -->
         <div class='m-4' id='NavBar'>
@@ -40,7 +41,6 @@
                                 <a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='fas fa-user'></i></a>
                                 <div class='dropdown-menu'>
                                     <a href='Profile.html' class='dropdown-item'>Profil</a>
-                                    <a href='Favourites.html' class='dropdown-item'>Favoriten</a>
                                     <div class='dropdown-divider'></div>
                                     <a href='LogOut.php' class='dropdown-item'>Ausloggen</a>
                                 </div>
@@ -70,7 +70,7 @@
         <!-- FORUM -->
 
         <div class="HeaderBig">WILLKOMMEN IM FORUM</div><br>
-        <div class="HeaderMed" style="font-size: 50px">HIER FINDEST DU EINE ÜBERSICHT ALLER BESTEHENDEN THEMEN UND BEITRÄGE<br></div><br>
+        <div class="HeaderMed" style="font-size:50px;">HIER FINDEST DU EINE ÜBERSICHT ALLER BESTEHENDEN THEMEN UND BEITRÄGE<br></div><br>
         <div class="container-fluid">
             <div id="TopicIndex">
                 <div style="margin-left: 20px; margin-right:40px">
@@ -82,58 +82,40 @@
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>ERNÄHRUNG</h4>
-                                        <ul>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>HUNDESPORT</h4>
-                                        <ul>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>FELLPFLEGE</h4>
-                                        <ul>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>ZAHNGESUNDHEIT</h4>
-                                        <ul>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>BARF</h4>
-                                        <ul>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -141,14 +123,8 @@
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>SPIELZEUG</h4>
-                                        <ul>															
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,26 +132,8 @@
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>DIY KRATZBAUM</h4>
-                                        <ul>									
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>		
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>		
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>										
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 1</a></li>
-                                            <li><a href="ForumArticlePage.html">Forenbeitrag 2</a></li>	
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>								
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -184,13 +142,7 @@
                                     <div class="inner">
                                         <h4>LECKERLIS SELBER MACHEN</h4>
                                         <ul>			
-                                            <li><a href="">Forenbeitrag 2</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -199,10 +151,8 @@
                                 <div class="innerCont">
                                     <div class="inner">
                                         <h4>DENKSPORT FÜR HUNDE</h4>
-                                        <ul>											
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                        <ul>					
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
 
@@ -214,16 +164,7 @@
                                     <div class="inner">
                                         <h4>AQUARIENEINRICHTUNG</h4>
                                         <ul>			
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
 
@@ -231,26 +172,14 @@
 
 
 
-                                <div class="innerCont">
+                                <div class="innerCont" id="10">
                                     <div class="inner">
                                         <h4>NATÜRLICHE MITTEL GEGEN ZECKEN</h4>
                                         <ul>			
-                                            <li><a href="">Forenbeitrag 2</a></li>										
-                                            <li><a href="">Forenbeitrag 1</a></li>
-                                            <li><a href="">Forenbeitrag 2</a></li>
-                                            <li><a href="ForumArticleOverviewPage.html">Alle Beiträge anzeigen</a></li>
+                                            <li><a href="ForumArticleOverviewPage.php">Alle Beiträge anzeigen</a></li>
                                         </ul>
                                     </div>
 
-                                </div>
-
-
-
-
-                                <div class="innerCont">
-                                    <div class="inner">
-                                        <h3>NICHT DAS PASSENDE DABEI? <br> Erstelle <a href="ForumNewTopicPage.html">hier</a> ein neues Thema!</h3>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -276,5 +205,7 @@
                 </div>
             </div>
         </div>
-    </body>
+        <script type="text/javascript">(function () {
+        window['__CF$cv$params'] = {r: '6ddd807f0c955b62', m: 'xkpTI1oqDFzQbXoF8boBI9kRwSMQkw7agpLi8JxQy5E-1644917263-0-AahJAaEjrWSYMYcpzxAnxV4Kq0bvXI/MCEUm4ypr4ewyCvn93wsWo73qj11rnaBnW0OQsuOAL7lB6aDkRV9rKZ+eQogc30M3mWusAsbcJLHPsp7WxOBLWe41OruITY8kPN+4cYdi0ADMZKGYPBWCfWheCu6apNeFr/khzldK49pUGqObJl5bprZvM9tVNH7AA+fPtZilO9WgrFlIgk4GLIw=', s: [0x3809391fcd, 0x4f61114740], }
+    })();</script></body>
 </html>

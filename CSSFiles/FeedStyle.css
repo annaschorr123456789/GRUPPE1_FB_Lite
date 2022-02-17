@@ -60,7 +60,6 @@
     grid-template-columns: auto auto auto;
     align-items: center;
     max-height: 520px;
-    border: 10px solid green;
 }
 
 p

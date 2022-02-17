@@ -35,7 +35,6 @@
                                 <a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='fas fa-user'></i></a>
                                 <div class='dropdown-menu'>
                                     <a href='Profile.html' class='dropdown-item'>Profil</a>
-                                    <a href='Favourites.html' class='dropdown-item'>Favoriten</a>
                                     <div class='dropdown-divider'></div>
                                     <a href='LogOut.php' class='dropdown-item'>Ausloggen</a>
                                 </div>
